@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="yiishop@127.0.0.1">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="yiishop">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="case"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <table id="8" parent="2" name="shop_admin"/>
+    <column id="9" parent="8" name="adminid">
+      <Position>1</Position>
+      <Comment>主键ID</Comment>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="10" parent="8" name="adminuser">
+      <Position>2</Position>
+      <Comment>管理员账号</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="11" parent="8" name="adminpass">
+      <Position>3</Position>
+      <Comment>管理员密码</Comment>
+      <DataType>char(32)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="12" parent="8" name="adminemail">
+      <Position>4</Position>
+      <Comment>管理员电子邮箱</Comment>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="13" parent="8" name="logintime">
+      <Position>5</Position>
+      <Comment>登录时间</Comment>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="14" parent="8" name="loginip">
+      <Position>6</Position>
+      <Comment>登录IP</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="15" parent="8" name="createtime">
+      <Position>7</Position>
+      <Comment>创建时间</Comment>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <index id="16" parent="8" name="shop_admin_adminuser_adminemail">
+      <ColNames>adminuser
+adminemail</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="17" parent="8" name="shop_admin_adminuser_adminpass">
+      <ColNames>adminuser
+adminpass</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="18" parent="8" name="PRIMARY">
+      <ColNames>adminid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="19" parent="8" name="shop_admin_adminuser_adminpass">
+      <ColNames>adminuser
+adminpass</ColNames>
+      <UnderlyingIndexName>shop_admin_adminuser_adminpass</UnderlyingIndexName>
+    </key>
+    <key id="20" parent="8" name="shop_admin_adminuser_adminemail">
+      <ColNames>adminuser
+adminemail</ColNames>
+      <UnderlyingIndexName>shop_admin_adminuser_adminemail</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
